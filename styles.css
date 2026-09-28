@@ -15,7 +15,7 @@
   --violet:#a8bdcd;
   --radius:12px;
 }
-html { scroll-behavior:auto; }
+html { scroll-behavior:smooth; }
 ::selection { background:#a8bdcd; color:#151b22; }
 .site-header { background:#151b22; backdrop-filter:none; border-bottom:1px solid var(--line); }
 .nav { height:76px; }
@@ -172,6 +172,35 @@ html { scroll-behavior:auto; }
 .project-card::before { content:"0" counter(project); position:absolute; top:27px; left:0; color:var(--accent); font-size:14px; font-weight:700; letter-spacing:.08em; }
 .project-card:hover { border-color:var(--line); }
 .project-content { padding:0; }
+.project-content>p { min-height:0; }
+.tech-list { margin:16px 0 0; }
+.projects-link { border-top:0; padding:20px 0 0 88px; }
 @media(max-width:760px) { .project-card { padding:20px 0 20px 54px; } .project-card::before { top:23px; } }
+@media(max-width:760px) { .projects-link { padding-left:54px; } }
 
 .school-logo { display:block; width:min(260px,100%); height:auto; margin-top:28px; object-fit:contain; object-position:left center; }
+
+/* Keep sections distinct without leaving oversized gaps between them. */
+.hero { padding-block:64px 54px; }
+.hero h1 { margin:20px 0 0; }
+.hero-actions { margin-top:28px; }
+.hero-socials { margin-top:28px; }
+.quick-facts { margin-bottom:8px; }
+.section { padding-block:56px; }
+.section-header { margin-bottom:26px; }
+.projects-section { padding-bottom:42px; }
+.toolkit-section { padding-top:42px; }
+.contact-section { padding-block:60px 58px; }
+
+@media(max-width:760px) {
+  .hero { padding-block:48px 42px; }
+  .quick-facts { margin-bottom:8px; }
+  .section { padding-block:48px; }
+  .projects-section { padding-bottom:36px; }
+  .toolkit-section { padding-top:36px; }
+  .contact-section { padding-block:48px 42px; }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+}
